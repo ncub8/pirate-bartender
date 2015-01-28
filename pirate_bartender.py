@@ -16,6 +16,9 @@ ingredients = {
     "fruity": ["slice of orange", "dash of cassis", "cherry on top", "twist of lemon"]
 }
 
+adjectives = ["Fluffy","Stinking","Dangerous","Deadly","Beautiful","Ferocious","Salty","Rusty","Bloody"]
+nouns = ["Coffin","Mast","Coffin","Beard","Scabbard","Blunderbus","Dog","Bilge","Grog"]
+
 def askQuestions():
   """Ask a user a series of questions about taste preferences"""
   choices = {}
@@ -39,7 +42,8 @@ def mix(choices):
 if __name__ == '__main__':
   userChoices = askQuestions()
   drink = mix(userChoices)
+  drinkname = random.choice(adjectives) + " " + random.choice(nouns)
   print ""
-  print "Heres ye drink:"
+  print "Heres ye drink, The " + drinkname
   for ingredient in drink:
     print "a " + ingredient
