@@ -28,7 +28,7 @@ def askQuestions():
   return choices
     
 
-def mix(choices=askQuestions()):
+def mix(choices):
   """Construct drink based on taste preferences"""
   drink = []
   for key, value in ingredients.items():
@@ -37,4 +37,9 @@ def mix(choices=askQuestions()):
   return drink
   
 if __name__ == '__main__':
-   print(mix())
+  userChoices = askQuestions()
+  drink = mix(userChoices)
+  print ""
+  print "Heres ye drink:"
+  for ingredient in drink:
+    print "a " + ingredient
